@@ -11,9 +11,9 @@ const route = require('./routes/index')
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(
-  express.urlencoded({
-    extended: true,
-  })
+    express.urlencoded({
+        extended: true,
+    }),
 )
 
 // HTTP logger
@@ -21,12 +21,12 @@ app.use(
 
 // Template engine
 app.engine('hbs', hbs.engine({ extname: '.hbs' }))
-              app.set('view engine', 'hbs')
-            app.set('views', path.join(__dirname, 'resources/views'))
+app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname, 'resources/views'))
 
 //Route init
 route(app)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 })
